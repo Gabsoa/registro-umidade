@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import os
+import openpyxl as op
 from datetime import datetime
 
 # Nome do arquivo Excel
