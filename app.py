@@ -5,14 +5,14 @@ import openpyxl as op
 from datetime import datetime
 
 # Nome do arquivo Excel
-ARQUIVO = "2. Planilha de UMIDADE.xlsx"
+ARQUIVO = "teste_registro.xlsx"
 
 # Função para carregar os dados existentes ou criar novo DataFrame
 def carregar_dados():
     if os.path.exists(ARQUIVO):
         return pd.read_excel(ARQUIVO)
     else:
-        colunas = ["DATA","TURNO", "OPEDADOR", "HORÁRIO", "UMIDADE", "TEMPERATURA", "TONELADAS", "CONTROLE DE UMIDADE LIGADO", "POSIÇÃO DO ARADO"]
+        colunas = ["Turno", "Nome do operador", "Horário", "Umidade", "Temperatura", "Toneladas"]
         return pd.DataFrame(columns=colunas)
 
 # Função para salvar os dados no Excel
@@ -29,29 +29,23 @@ st.title("Registro de umidade -Teste-")
 
 # Formulário para nova entrada
 with st.form("formulario_dados", clear_on_submit=True):
-    DATA = st.text_input("Data")
-    TURNO = st.selectbox("Turno", ["A1", "A2", "B1", "B2"])
-    OPERADOR = st.text_input("Nome do operador")
-    HORÁRIO = st.text_input("Horário")
-    UMIDADE = st.number_input("Umidade (%)")
-    TEMPERATURA = st.number_input("Temperatura (°C)")
-    TONELADAS = st.number_input("Toneladas (T)")
-    CONTROLE DE UMIDADE LIGADO = st.selectbox("Controle ligado", ["Sim", "Não"])
-    POSIÇÃO DO ARADO = st.selectbox("Posição do arado", ["Elevado", "Abaixado"])
+    turno = st.selectbox("Turno", ["A1", "A2", "B1", "B2"])
+    nome = st.text_input("Nome do operador")
+    horario = st.text_input("Horário da amostra")
+    umidade = st.number_input("Umidade (%)")
+    temperatura = st.number_input("Temperatura (°C)")
+    toneladas = st.number_input("Toneladas")
     
     submit = st.form_submit_button("Salvar")
 
     if submit:
         nova_linha = {
-            "DATA": data,
-            "TURNO": turno,
-            "OPERADOR": nome do operador,
-            "HORÁRIO": horario,
-            "UMIDADE": umidade,
-            "TEMPERATURA": temperatura,
-            "TONELADAS": toneladas,
-            "CONTROLE DE UMIDADE LIGADO": controle de umidade ligado,
-            "POSIÇÃO DO ARADO": posição do arado
+            "Turno": turno,
+            "Nome do operador": nome,
+            "Horário": horario,
+            "Umidade": umidade,
+            "Temperatura": temperatura,
+            "Toneladas": toneladas,
             }
         
         df_novo = pd.DataFrame([nova_linha])
@@ -61,5 +55,7 @@ with st.form("formulario_dados", clear_on_submit=True):
         
 
 # Visualização de dados existentes
+with st.expander("📁 Visualizar dados existentes"):
+    st.dataframe(df_existente)
 with st.expander("📁 Visualizar dados existentes"):
     st.dataframe(df_existente)
