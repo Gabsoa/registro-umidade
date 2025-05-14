@@ -36,7 +36,7 @@ with st.form("formulario_dados", clear_on_submit=True):
     UMIDADE = st.number_input("Umidade (%)")
     TEMPERATURA = st.number_input("Temperatura (°C)")
     TONELADAS = st.number_input("Toneladas (T)")
-    controle de umidade = st.selectbox("Controle de umidade",["Sim", "Não"])
+    Controle de umidade lidado = st.selectbox("Controle de umidade ligado",["Sim", "Não"])
     POSIÇÃO DO ARADO = st.selectbox("Posição do arado", ["Elevado", "Abaixado"])
     
     submit = st.form_submit_button("Salvar")
@@ -50,7 +50,7 @@ with st.form("formulario_dados", clear_on_submit=True):
             "UMIDADE": umidade,
             "TEMPERATURA": temperatura,
             "TONELADAS": toneladas,
-            "CONTROLE DE UMIDADE LIGADO": controle de umidade,
+            "CONTROLE DE UMIDADE LIGADO": controle de umidade ligado,
             "POSIÇÃO DO ARADO": posição do arado
             }
         
