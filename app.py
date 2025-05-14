@@ -25,7 +25,7 @@ df_existente = carregar_dados()
 # Título e layout
 st.set_page_config(page_title="Registro de umidade -Teste-", layout="centered")
 st.title("Registro de umidade -Teste-")
-st.markdown("Preencha os campos abaixo para adicionar uma nova entrada:")
+
 
 # Formulário para nova entrada
 with st.form("formulario_dados", clear_on_submit=True):
