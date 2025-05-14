@@ -32,11 +32,11 @@ with st.form("formulario_dados", clear_on_submit=True):
     DATA = st.text_input("Data")
     TURNO = st.selectbox("Turno", ["A1", "A2", "B1", "B2"])
     OPERADOR = st.text_input("Nome do operador")
-    HORÁRIO = st.text_input("Horário da amostra")
+    HORÁRIO = st.text_input("Horário")
     UMIDADE = st.number_input("Umidade (%)")
     TEMPERATURA = st.number_input("Temperatura (°C)")
     TONELADAS = st.number_input("Toneladas (T)")
-    CONTROLE DE UMIDADE LIGADO = st.selectbox("Controle de umidade ligado", ["Sim", "Não"])
+    CONTROLE DE UMIDADE LIGADO = st.selectbox("Controle ligado", ["Sim", "Não"])
     POSIÇÃO DO ARADO = st.selectbox("Posição do arado", ["Elevado", "Abaixado"])
     
     submit = st.form_submit_button("Salvar")
