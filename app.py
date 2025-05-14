@@ -57,5 +57,4 @@ with st.form("formulario_dados", clear_on_submit=True):
 # Visualização de dados existentes
 with st.expander("📁 Visualizar dados existentes"):
     st.dataframe(df_existente)
-with st.expander("📁 Visualizar dados existentes"):
-    st.dataframe(df_existente)
+
